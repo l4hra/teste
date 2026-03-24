@@ -15,7 +15,7 @@ class PersonBusinessRuleTest extends TestCase
     use RefreshDatabase;
     public function test_cannot_create_person_under_18(): void
     {
-        $response = $this->postJson('/api/people', [
+        $response = $this->postJson('/api/person', [
             'name' => 'João Menor',
             'cpf' => '12345678901',
             'birth_date' => now()->subYears(17)->format('Y-m-d'),
@@ -29,9 +29,9 @@ class PersonBusinessRuleTest extends TestCase
         $response->assertStatus(422)->assertJsonValidationErrors(['birth_date']);
     }
 
-    public function test_can_create_person_under_18()
+    public function test_can_create_person_over_18()
     {
-        $response = $this->postJson('/api/people', [
+        $response = $this->postJson('/api/person', [
             'name' => 'Maria Maior',
             'cpf' => '10987654321',
             'birth_date' => now()->subYears(20)->format('Y-m-d'),
