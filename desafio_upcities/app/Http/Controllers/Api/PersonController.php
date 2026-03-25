@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\UpdatePersonRequest;
 use App\Models\Person;
 use App\Http\Requests\StorePersonRequest;
 use Illuminate\Http\Request;
@@ -40,7 +41,7 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Person $person): JsonResponse
+    public function update(UpdatePersonRequest $request, Person $person): JsonResponse
     {
         $person->update($request->validated());
         return response()->json($person);
