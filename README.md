@@ -68,8 +68,8 @@ Integridade de Dados: Garantia de que e-mails sejam únicos (mesmo durante o upd
 Tratamento de Erros: Respostas JSON padronizadas para registros não encontrados (404).
 
 ## Algumas decisões de desenvolvimento:
-* **Como desenvolvedora, priorizei a organização e a manutenibilidade do código:
-* **Form Requests: Toda a validação foi isolada em classes Request (ex: UpdatePersonRequest), mantendo os Controllers enxutos.
-* **Global Exceptions: Configurei o bootstrap/app.php para que a API sempre responda em formato JSON, facilitando a integração com Front-ends.
+*  Como desenvolvedora, priorizei a organização e a manutenibilidade do código:
+*  Form Requests: Toda a validação foi isolada em classes Request (ex: UpdatePersonRequest), mantendo os Controllers enxutos.
+*  Global Exceptions: Configurei o bootstrap/app.php para que a API sempre responda em formato JSON, facilitando a integração com Front-ends.
 
 
