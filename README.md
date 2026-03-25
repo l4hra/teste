@@ -46,7 +46,6 @@ Siga estes passos simples para configurar o ambiente:
     ```bash
     php artisan serve
     ```
-    A API estará disponível em: `http://localhost:8000`
 
 ---
 
