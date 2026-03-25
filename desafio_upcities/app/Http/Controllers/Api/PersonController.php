@@ -40,16 +40,18 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Person $person): JsonResponse
     {
-        //
+        $person->update($request->validated());
+        return response()->json($person);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Person $person): JsonResponse
     {
-        //
+        $person->delete();
+        return response()->json(null, 204);
     }
 }
